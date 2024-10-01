@@ -83,10 +83,17 @@ int main()
     printArray(Array, N);
 
     counterNumbers = arrayChange(Array, N, false);
-    counterSpecial = N - (counterLetters + counterNumbers);
-
     printArray(Array, N);
 
+    if(counterLetters + counterNumbers > N)
+    {
+        counterSpecial = N - counterNumbers;
+    }
+    else
+    {
+        counterSpecial = N - (counterLetters + counterNumbers);
+    }
+    
     cout << "\nThe number of repetitions first character: " << counterLetters;
     cout << "\nThe number of repetitions second character: " << counterNumbers;
     cout << "\nThe number of not replaced characters: " << counterSpecial;
